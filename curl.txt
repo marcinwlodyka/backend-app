@@ -1,0 +1,17 @@
+// zapytanie POST o token do autoryzacji
+curl -X "POST" "http://localhost:5014/api/Security/GenerateToken" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"userName\": \"wsei\", \"password\": \"wsei\" }"
+
+// zapytanie GET o wszystkie dostępne filmy
+curl -X "GET" "http://localhost:5014/api/Movie" -H "accept: application/json"
+
+// zapytanie GET o wszystkie wyszukujące film po Id
+curl -X "GET" "http://localhost:5014/api/Movie/1" -H "accept: application/json"
+
+// zapytanie POST dodające nowy film
+curl -X "POST" "http://localhost:5014/api/Movie" -H "accept: text/plain" -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -d "{ \"title\": \"Test\", \"releaseDate\": \"2002-04-30 00:00:00\", \"genreId\": 1, \"actorIds\": [1, 2] }"
+
+// zapytanie PUT edytujące film bazując na Id
+curl -X "PUT" "http://localhost:5014/api/Movie/1" -H "accept: */*" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d "{ \"title\": \"Test\", \"releaseDate\": \"2002-04-30 00:00:00\", \"genreId\": 1, \"actorIds\": [ 1 ] }"
+
+// zapytanie DELETE usuwające film bazując na Id
+curl -X "DELETE" "http://localhost:5014/api/Movie/1" -H "accept: */*" -H "Authorization: Bearer <token>"
