@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend-app", "backend-app\backend-app.csproj", "{D751FF95-56AA-409C-B84E-76E8370DC1DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapService", "SoapService\SoapService.csproj", "{C04EC95A-7507-4CB0-AE94-D733780DB960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoapClient", "SoapClient\SoapClient.csproj", "{F8422B14-02E7-4AA2-88D3-A003C0EE1FB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{D751FF95-56AA-409C-B84E-76E8370DC1DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D751FF95-56AA-409C-B84E-76E8370DC1DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D751FF95-56AA-409C-B84E-76E8370DC1DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04EC95A-7507-4CB0-AE94-D733780DB960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04EC95A-7507-4CB0-AE94-D733780DB960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04EC95A-7507-4CB0-AE94-D733780DB960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04EC95A-7507-4CB0-AE94-D733780DB960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8422B14-02E7-4AA2-88D3-A003C0EE1FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8422B14-02E7-4AA2-88D3-A003C0EE1FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8422B14-02E7-4AA2-88D3-A003C0EE1FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8422B14-02E7-4AA2-88D3-A003C0EE1FB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -10,7 +10,7 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container.   
 
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
     options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
@@ -74,6 +74,28 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.Use(async (ctx, next) =>
+{
+    var str = new StringBuilder();
+    var req = ctx.Request;
+    
+    req.Headers.AccessControlAllowOrigin = "*";
+
+    str.AppendLine("# request info");
+    str.AppendLine($"path = {req.Path}");
+    str.AppendLine($"methode = {req.Method.ToUpper()}");
+    
+    str.AppendLine("");
+    
+    str.AppendLine("# headers");
+    var headers = string.Join("\n", req.Headers.Select((pair) => $"{pair.Key} = {pair.Value}"));
+    str.AppendLine(headers);
+    
+    Console.WriteLine(str.ToString());
+    
+    await next();
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
